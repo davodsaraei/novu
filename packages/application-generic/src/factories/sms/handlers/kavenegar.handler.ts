@@ -8,6 +8,10 @@ export class KavenegarHandler extends BaseSmsHandler {
     super('kavenegar', ChannelTypeEnum.SMS);
   }
   buildProvider(credentials: ICredentials) {
+    if (!credentials.apiKey || !credentials.from) {
+      throw Error('Config is not valid for kavenegar-sms provider');
+    }
+
     this.provider = new KavenegarSmsProvider({
       apiKey: credentials.apiKey,
       from: credentials.from,

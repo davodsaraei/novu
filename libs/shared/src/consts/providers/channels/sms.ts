@@ -155,7 +155,7 @@ export const smsProviders: IProviderConfig[] = [
     logoFileName: { light: 'termii.png', dark: 'termii.png' },
   },
   {
-    id: 'kavenegar',
+    id: SmsProviderIdEnum.Kavenegar,
     displayName: 'Kavenegar',
     channel: ChannelTypeEnum.SMS,
     credentials: kavenegarConfig,
